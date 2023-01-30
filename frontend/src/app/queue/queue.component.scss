@@ -1,0 +1,38 @@
+.success {
+	color: #3fb33f;
+}
+.failed {
+	color: red;
+}
+
+#limit, #refreshRate {
+	max-width: 70px;
+	display: inline-block;
+	background: #333;
+	color: #fff;
+	border: 1px solid #666;
+}
+
+.fa-spinner {
+	opacity: 0.6;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.monospace {
+	font-family: monospace;
+	font-size: 100%
+}
+
+.fa-copy {
+	cursor: pointer;
+	opacity: 0.5;
+	&:hover {
+		opacity: 1;
+	}
+	&:active {
+		opacity: 0.5;
+	}
+}
