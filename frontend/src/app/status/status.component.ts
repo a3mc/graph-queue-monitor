@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import { ApiClientService } from "../api-client.service";
 import { take } from "rxjs";
+import { ApiClientService } from "../api-client.service";
 
 @Component( {
-    selector: 'app-queue',
-    templateUrl: './queue.component.html',
-    styleUrls: ['./queue.component.scss']
+    selector: 'app-status',
+    templateUrl: './status.component.html',
+    styleUrls: ['./status.component.scss']
 } )
-export class QueueComponent {
-
-    public queue: any = [];
-    public refreshTime = 10;
-    public limit = 25;
+export class StatusComponent {
     public loading = false;
+    public refreshTime = 300;
+    public status: any = {};
     private _refreshInterval: any = null;
 
     constructor(
@@ -21,8 +19,8 @@ export class QueueComponent {
     }
 
     ngOnInit(): void {
-        this._getQueue();
-        // Set interval to refresh the queue
+        this._getStatus();
+        // Set interval to refresh the status
         this.setRefresh();
     }
 
@@ -36,16 +34,16 @@ export class QueueComponent {
         }
         clearInterval( this._refreshInterval );
         this._refreshInterval = setInterval( () => {
-            this._getQueue();
+            this._getStatus();
         }, this.refreshTime * 1000 );
     }
 
-    private _getQueue(): void {
+    private _getStatus(): void {
         this.loading = true;
-        this._apiClientService.get( 'actions-queue?limit=' + this.limit )
+        this._apiClientService.get( 'status' )
             .pipe( take( 1 ) )
             .subscribe( ( data: any ) => {
-                this.queue = data;
+                this.status = data;
                 this.loading = false;
             } );
     }

@@ -9,6 +9,7 @@ import { RestApplication } from '@loopback/rest';
 import { ServiceMixin } from '@loopback/service-proxy';
 import path from 'path';
 import { MySequence } from './sequence';
+import { AGENT_POOL_CONNECTION, NODE_POOL_CONNECTION, PgAgentPoolProvider, PgNodePoolProvider } from "./pool.providers";
 
 export { ApplicationConfig };
 
@@ -21,14 +22,12 @@ export class GraphQueueMonitorApplication extends BootMixin(
         // Set up the custom sequence
         this.sequence( MySequence );
 
+        // Bing pool providers
+        this.bind( AGENT_POOL_CONNECTION ).toProvider( PgAgentPoolProvider );
+        this.bind( NODE_POOL_CONNECTION ).toProvider( PgNodePoolProvider );
+
         // Set up default home page
         this.static( '/', path.join( __dirname, '../public' ) );
-
-        // Customize @loopback/rest-explorer configuration here
-        this.configure( RestExplorerBindings.COMPONENT ).to( {
-            path: '/explorer',
-        } );
-        this.component( RestExplorerComponent );
 
         this.projectRoot = __dirname;
         // Customize @loopback/boot Booter Conventions here

@@ -9,17 +9,20 @@ import { ApiClientService } from "./api-client.service";
 import { FormsModule } from "@angular/forms";
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatusComponent } from './status/status.component';
 
 @NgModule( {
     declarations: [
         AppComponent,
-        QueueComponent
+        QueueComponent,
+        StatusComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
+
         BrowserAnimationsModule,
         ClipboardModule,
     ],

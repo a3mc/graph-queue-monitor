@@ -1,10 +1,9 @@
 <div class="clearfix">
-    <h3 style="float:left">
-        Actions queue
+    <div style="float:left">
         <small *ngIf="loading" >
             <i class="fas fa-spinner fa-spin ms-1 text-small"></i>
         </small>
-    </h3>
+    </div>
 
     <div style="float:right">
         <label class="form-label me-2" for="limit">Limit:</label>
@@ -58,7 +57,7 @@
         </td>
         <td>{{ action.reason }}</td>
         <td>{{ action.force }}</td>
-        <td>{{ action.amount }}</td>
+        <td>{{ action.amount | number:'1.0' }}</td>
         <td>{{ action.poi }}</td>
         <td class="nowrap">{{ action.updatedAt | date: 'medium' }}</td>
         <td>{{ action.source }}</td>
