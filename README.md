@@ -1,10 +1,10 @@
 # graph-queue-monitor
 
-As a new The Graph community member we've been using this tool to debug and study our indexer agent queue. More features can be added, please ping us on Discord server. We are professional developers who enjoy modern high complexity space, specialized on protocols research, data crawling, user interfaces, automation and monitoring.
+As a new The Graph community member we've been using this tool to debug and study our indexer properties and agent queue. More features can be added, please ping us on Discord server. We are professional developers who enjoy modern high complexity space, specialized on protocols research, data crawling, user interfaces, automation and monitoring.
 
 ### How it works
 
-The tool is a simple Node.js server (coupled with a frontend) that connects to a Graph node Agent DB and displays the queue in a browser. It can be run locally or deployed to a server. We strongly recommend not to expose it publicly. Even though it only makes read-only "SELECT" queries, publicly exposing such tools goes against best practices.
+The tool is a simple Node.js server (coupled with a frontend) that connects to aAgent DB and Graph Node DB and displays some overview of the Indexer status and Actions queue in a browser. It can be run locally or deployed to a server. We strongly recommend not to expose it publicly. Even though it only makes read-only "SELECT" queries, publicly exposing such tools goes against best practices.
 
 ### How to run
 
@@ -28,7 +28,7 @@ _Make sure docker can access Postgres. There are too many variations of deployme
 
 ### Frontend part
 
-The frontend part is a simple Angular app that displays the queue in a table and periodically refreshes it. It is already prebuilt, but if you want you can compile it from the `/frontend` directory.
+The frontend part is a simple Angular app that displays the overview and queue in a table and periodically refreshes it. It is already prebuilt, but if you want you can compile it from the `/frontend` directory.
 
 ### How it looks
 

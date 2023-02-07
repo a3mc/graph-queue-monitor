@@ -20,7 +20,7 @@ export class ActionsQueueController {
     async queue(
         @param.query.number( 'limit' ) limit: number = 50,
     ): Promise<any> {
-        if ( process.env.USE_MOCKS === 'true' ) {
+        if ( process.env.USE_MOCKS ) {
             return queueMock;
         }
 
@@ -35,7 +35,7 @@ export class ActionsQueueController {
     @get( 'status' )
     @response( 200 )
     async status(): Promise<any> {
-        if ( process.env.USE_MOCKS === 'true' ) {
+        if ( process.env.USE_MOCKS ) {
             return statusMock;
         }
 
