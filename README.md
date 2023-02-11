@@ -18,11 +18,11 @@ Docker:
 $ docker build -t graph-queue-monitor .
 ```
 ```sh
-$ docker run --restart=unless-stopped --name graph-queue-monitor -p 3000:3000 -d graph-queue-monitor
+$ docker run --restart=unless-stopped --name graph-queue-monitor -p 3111:3111 -d graph-queue-monitor
 ```
 Without docker:
 
-Install Node.js 16x and npm. Run `npm i && npm start` to start the service. By default interface runs on port `3000` and if env variables are configured correctly, you'll be able to see the queue somewhere around http://localhost:3000.
+Install Node.js 16x and npm. Run `npm i && npm start` to start the service. By default interface runs on port `3111` and if env variables are configured correctly, you'll be able to see the queue somewhere around http://localhost:3111.
 
 _Make sure docker can access Postgres. There are too many variations of deployment, please think about appropriate solution._
 
