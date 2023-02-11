@@ -18,7 +18,7 @@
         "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
         "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js",
         "docker:build": "docker build -t graph-queue-monitor .",
-        "docker:run": "docker run --restart=unless-stopped --name graph-queue-monitor --network=\"host\" -p 3000:3000 -d graph-queue-monitor",
+        "docker:run": "docker run --restart=unless-stopped --name graph-queue-monitor --network=\"host\" -p 3111:3111 -d graph-queue-monitor",
         "premigrate": "npm run build",
         "migrate": "node ./dist/migrate",
         "preopenapi-spec": "npm run build",
